@@ -1,0 +1,112 @@
+/*背景图片位置*/
+@mixin tb-item($pos,$hovpos){
+    background-position: 0 $pos;
+    &:hover {
+        background-position: 0 $hovpos;
+       
+    }
+}
+
+/*二维码位置*/
+@mixin qrcode($height,$toppos){
+    height: $height;
+    background-position: 0 $toppos;
+}
+
+$tb-size:52px;
+
+.toolbar{
+    position: fixed;
+    left: 50%;
+    bottom: 5px;
+    margin-left: -$tb-size / 2; 
+}
+.tb-item{
+    position: relative;
+    display: block;
+    width: $tb-size;
+    height: $tb-size;
+    margin-top: 1px;
+
+    &:hover{
+        .tb-icon{
+            top:-$tb-size;
+        }
+        .tb-text{
+            top:0;
+        }
+
+        .tb-layer{
+            @include opacity(1);
+
+
+            @include scale(1);
+        }
+
+    }
+
+
+}
+.tb-btn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $tb-size;
+    height: $tb-size;
+    overflow: hidden;
+}
+.tb-icon{
+    position: absolute;;
+    left: 0;
+    top: 0;
+    width: $tb-size;
+    height: $tb-size;
+    background-color: #d0d6d9;
+    padding-top:12px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: $tb-size;
+
+    @include transition(top 0.5s);
+
+}
+.tb-text{
+    position: absolute;;
+    left: 0;
+    top: $tb-size;
+    width: $tb-size;
+    height: $tb-size;
+    background-color: #98a1a6;
+    padding-top:12px; 
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.2;
+ 
+    @include transition(top 0.5s);
+
+}
+.tb-layer{
+    position: absolute;
+    right: $tb-size - 6 ;
+    bottom: -10px;
+    width: 172px;
+    background-image: url(../img/toolbar_img.png);
+    background-repeat: no-repeat;
+    @include opacity(0);
+
+    @include transition-origin(95% 95%);
+
+    @include scale(0.01);
+
+    @include transition(all 0.5s);
+}
+.tb-layer-weixin{
+
+    @include qrcode(212px,0);
+}
+.tb-layer-app{
+    @include qrcode(194px,-222px);
+
+}

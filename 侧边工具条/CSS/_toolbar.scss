@@ -1,0 +1,92 @@
+/*背景图片位置*/
+@mixin tb-item($pos,$hovpos){
+    background-position: 0 $pos;
+    &:hover {
+        background-position: 0 $hovpos;
+       
+    }
+}
+
+/*二维码位置*/
+@mixin qrcode($height,$toppos){
+    height: $height;
+    background-position: 0 $toppos;
+}
+
+
+$tb-size:52px;
+
+.tb-item,.tb-layer{
+   background-image: url(../img/toolbar.png);
+   background-repeat: none;
+}
+
+/*工具条样式*/
+.toolbar{
+	position: fixed;
+	right: 5%;
+	bottom: 5px;
+	margin-left: -$tb-size / 2; 
+}
+
+
+/*公共样式*/
+.tb-item{
+	position: relative;
+    display: block;
+    width: $tb-size;
+    height: $tb-size;
+    margin-top: 1px;
+    @include transition(background-position 0.5s);
+
+    &:hover{
+    	.tb-layer{
+    		@include opacity(1);
+    		@include scale(1);
+    	}
+    }
+}
+
+/*微信样式*/
+.tb-item-weixin{
+  
+    @include tb-item(-798px,-860px);
+   
+    .tb-layer{ /*微信二维码*/
+    	  @include qrcode(212px,0);
+    }
+  
+
+}
+/*反馈样式*/
+.tb-item-feedback{
+   
+    @include tb-item(-426px,-488px);
+}
+
+/*app*/
+.tb-item-app{
+    @include tb-item(-550px,-612px);
+
+    .tb-layer{/*APP二维码*/
+          @include qrcode(194px,-222px);
+	}
+}
+
+/*返回顶部*/
+.tb-item-top{
+    
+     @include tb-item(-674px,-736px);
+}
+
+/*放置二维码*/
+.tb-layer{
+    position: absolute;
+    right: $tb-size - 6;
+    bottom: -10px;
+	width : 172px;
+	@include opacity(0);
+    @include transition-origin(95% 95%);
+	@include scale(0.01);
+	@include transition(all 0.5s);
+ }

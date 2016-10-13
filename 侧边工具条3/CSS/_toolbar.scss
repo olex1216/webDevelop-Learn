@@ -1,0 +1,166 @@
+/*背景图片位置*/
+@mixin tb-item($pos,$hovpos){
+    background-position: 0 $pos;
+    &:hover {
+        background-position: 0 $hovpos;
+       
+    }
+}
+
+/*二维码位置*/
+@mixin qrcode($height,$toppos){
+    height: $height;
+    background-position: 0 $toppos;
+}
+
+$tb-size:52px;
+
+.toolbar{
+    position: fixed;
+    right: 10%;
+    bottom: 5px;
+    margin-left: -$tb-size / 2;
+}
+
+.tb-item{
+    position: relative;
+    display: block;
+    width: $tb-size;
+    height: $tb-size;
+    margin-top: 1px;
+
+    &:hover{
+        .tb-btn{
+            &:before{
+                top:-$tb-size;
+            };
+            &:after{
+                top:0;
+            };
+        }
+        &:after{
+            @include opacity(1);
+            @include scale(1);
+        };
+    };
+
+    &:after{
+        content:"";
+        position: absolute;
+        right: $tb-size - 6;
+        bottom: -10px;
+        width: 172px;
+        background-image: url("../img/toolbar_img.png");
+        background-repeat: no-repeat;
+
+        @include opacity(0);
+
+        @include transition-origin(95% 95%);
+
+        @include scale(0.01);
+
+        @include transition(all 0.5s);
+    };
+}
+
+.tb-item-weixin{
+    &:after{
+        content: "";
+        height: 212px;
+        background-position: 0 0;
+    }
+    .tb-btn{
+        &:before{
+            content: "\e900";
+        };
+        &:after{
+            content: "公众\A账号";
+        };
+    }
+}
+
+.tb-item-feedback{
+    .tb-btn{
+        &:before{
+            content: "\e96b";
+        };
+        &:after{
+            content: "意见\A反馈";
+        };
+    }
+}
+
+.tb-item-app{
+       &:after{
+        content: "";
+        height: 194px;
+        background-position: 0 -222px;
+    }
+        .tb-btn{
+            &:before{
+                content: "\e958";
+        };
+        &:after{
+            content: "APP\A下载";
+        };
+    }
+}
+
+
+.tb-item-top{
+     .tb-btn{
+        &:before{
+            content: "\ea32";
+        };
+        &:after{
+            content: "返回\A顶部";
+        };
+    }
+
+}
+
+
+.tb-btn{
+
+    &,&:before,&:after{
+         position:absolute;
+         left: 0;
+         width: $tb-size;
+         height: $tb-size;
+    }
+
+    &:before,&:after{
+        content:"";
+        background-color: #d0d6d9;
+        text-align: center;
+        color: white;
+        @include transition(top 0.5s);
+    }
+
+    
+    top: 0;
+    overflow: hidden;
+
+    @extend  [class^="icon-"];
+
+    &:before{/*icon*/     
+        top: 0;
+        font-size: 30px;      
+        line-height: $tb-size;
+        
+
+    };
+
+    &:after{/*text */
+        top: $tb-size;
+        font-size: 15px;
+        font-family: "微软雅黑";
+        line-height: 1.2;
+        padding-top: 12px;
+        white-space: pre;
+
+
+
+    };
+
+}

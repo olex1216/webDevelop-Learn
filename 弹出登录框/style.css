@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.main_nav a{
+  text-decoration: none;
+}
+
+.main_nav li{
+  list-style: none;
+  float: left;
+  margin: 30px;
+}
+
+.cd-user-modal { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(52, 54, 66, 0.9); 
+  z-index: 3; 
+  overflow-y: auto; 
+  cursor: pointer; 
+  visibility: hidden; 
+  opacity: 0; 
+  -webkit-transition: opacity 0.3s 0, visibility 0 0.3s; 
+  transition: opacity 0.3s 0, visibility 0 0.3s; 
+} 
+.cd-user-modal.is-visible { 
+  visibility: visible; 
+  opacity: 1; 
+  -webkit-transition: opacity 0.3s 0, visibility 0 0; 
+  transition: opacity 0.3s 0, visibility 0 0; 
+} 
+.cd-user-modal.is-visible .cd-user-modal-container { 
+  -webkit-transform: translateY(0); 
+  transform: translateY(0); 
+} 
+ 
+.cd-user-modal-container { 
+  position: relative; 
+  width: 90%; 
+  max-width: 600px; 
+  background: #FFF; 
+  margin: 3em auto 4em; 
+  cursor: auto; 
+  border-radius: 0.25em; 
+  -webkit-transform: translateY(-30px); 
+  transform: translateY(-30px); 
+  -webkit-transition-property: -webkit-transform; 
+  transition-property: -webkit-transform; 
+  transition-property: transform; 
+  transition-property: transform, -webkit-transform; 
+  -webkit-transition-duration: 0  .3s; 
+  transition-duration: 0.3s; 
+} 
+.cd-user-modal-container .cd-switcher:after { 
+  content: ""; 
+  display: table; 
+  clear: both; 
+} 
+.cd-user-modal-container .cd-switcher li { 
+  width: 50%; 
+  float: left; 
+  text-align: center; 
+  list-style: none;
+} 
+.cd-user-modal-container .cd-switcher li:first-child a { 
+  border-radius: .25em 0 0 0; 
+  
+} 
+.cd-user-modal-container .cd-switcher li:last-child a { 
+  border-radius: 0 .25em 0 0; 
+
+} 
+.cd-user-modal-container .cd-switcher a { 
+  display: block; 
+  width: 100%; 
+  height: 50px; 
+  line-height: 50px; 
+  background: #d2d8d8; 
+  color: #809191; 
+  text-decoration: none;
+  margin: 0;
+} 
+.cd-user-modal-container .cd-switcher a.selected { 
+  background: #FFF; 
+  color: #505260; 
+} 
+ 
+#cd-login, #cd-signup { 
+  display: none; 
+  height: 200px;
+} 
+
+.sign-input{
+  width: 500px;
+  margin: 30px auto;
+  padding: 10PX;
+}
+
+.cd-form{
+  height: 150px;
+
+}
+#p-again{
+  margin-left: -16px;
+}
+ 
+#cd-login.is-selected, #cd-signup.is-selected{ 
+  display: block; 
+} 

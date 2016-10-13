@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录框</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="C:\Users\陈燕娜\node_modules\jquery\dist\jquery.min.js"></script>    
+  <script type="text/javascript" src="script.js"></script>
+    
+	
+</head>
+<body>
+<nav class="main_nav"> 
+    <ul> 
+        <li><a class="cd-signin" href="#0">登录</a></li> 
+        <li><a class="cd-signup" href="#0">注册</a></li> 
+    </ul> 
+</nav> 
+
+<div class="cd-user-modal">  
+    <div class="cd-user-modal-container"> 
+        <ul class="cd-switcher"> 
+            <li><a href="#0">用户登录</a></li> 
+            <li><a href="#0">注册新用户</a></li> 
+
+        </ul> 
+       
+        <div id="cd-login">  
+        <!-- 登录表单 --> 
+            <form class="cd-form"> 
+               <div class="sign-input">
+               <span>帐　号：</span>
+               <span><input autocomplete="on" name="u" id="login-u" type="text" style="ime-mode: disabled" class="input01" tabindex="1" value="QQ号码或Email帐号" onFocus="if (value =='QQ号码或Email帐号'){value =''}" onBlur="if (value ==''){value='QQ号码或Email帐号';}" /></span>
+               </div>
+               <div class="sign-input">
+               <span>密　码：</span>
+               <span><input name="p" id="login-p" maxlength="16" type="password" class="input01" tabindex="2" /></span>
+               </div> 
+            </form> 
+        </div> 
+ 
+        <div id="cd-signup">  
+            <!-- 注册表单 --> 
+            <form class="cd-form"> 
+               <div class="sign-input">
+               <span>帐　号：</span>
+               <span><input autocomplete="on" name="u" id="sign-u" type="text" style="ime-mode: disabled" class="input01" tabindex="1" value="用户名或Email帐号" onFocus="if (value =='用户名或Email帐号'){value =''}" onBlur="if (value ==''){value='用户名或Email帐号';}" /></span>
+               </div>
+               <div class="sign-input">
+               <span>密　码：</span>
+               <span><input name="p" id="sign-p" maxlength="16" type="password" class="input01" tabindex="2" /></span>
+               </div> 
+               <div class="sign-input">
+               <span>再次输入：</span>
+               <span><input name="p" id="p-again" maxlength="16" type="password" class="input01" tabindex="2" /></span>
+               </div> 
+            </form> 
+        </div>         
+    </div> 
+</div> 
+	
+</body>
+</html>

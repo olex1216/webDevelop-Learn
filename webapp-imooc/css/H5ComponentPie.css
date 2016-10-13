@@ -1,0 +1,17 @@
+/* 饼图组件样式 */
+
+
+.h5-comp-pie canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.h5-comp-pie .text {
+	position: absolute;
+	text-align: center;
+	z-index: 99;
+	height: 20px;		
+}

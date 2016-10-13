@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style type="text/css">
+		#timeshow{
+			margin-left: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			function timeGo(){
+				timer=setInterval(function(){
+				clearInterval(timer);
+				ts=document.getElementById('timeshow');
+				var myDate = new Date();
+				var year = myDate.getFullYear();
+				var month = myDate.getMonth()+1;
+				var date = myDate.getDate();
+		        var day = myDate.getDay()
+				ts.innerHTML =myDate;
+				},1000)
+		    }
+		timeGo();
+			
+
+		}
+	</script>
+</head>
+<body>
+	<div id="timeshow">时间</div>
+</body>
+</html>
