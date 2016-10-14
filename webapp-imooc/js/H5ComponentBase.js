@@ -25,6 +25,9 @@ var H5ComponentBase = function (name,cfg) {
 	 	});
 
 	 }
+	 if( typeof cfg.onclick === 'function' ){
+	     component.on('click',cfg.onclick);
+	 };
 
 	 component.on('onLoad',function () {
 	 	component.addClass(cls+'-load').removeClass(cls+'-leave');
