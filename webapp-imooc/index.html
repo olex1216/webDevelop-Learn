@@ -250,7 +250,7 @@
                 .addComponent('msg',{
                     text:'移动课程 Android 占到40%',
                     css:{
-                        opacity:0,bottom:120,
+                        opacity:1,bottom:120,
                         textAlign:'center',width:'100%',color:'#ff7676'
                     },
                     animateIn:{ opacity:1},
@@ -481,8 +481,9 @@
                          $.fn.fullpage.moveTo( 1 )
                     }
                 })
+            .loader();
 
-            .loader( [ 'imgs/tail_back.png','imgs/tail_share.png','imgs/tail_slogan.png' ] );
+            // .loader( [ 'imgs/tail_back.png','imgs/tail_share.png','imgs/tail_slogan.png' ] );
 
         });
     </script>
