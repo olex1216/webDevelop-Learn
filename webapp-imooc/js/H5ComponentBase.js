@@ -6,10 +6,10 @@
 var H5ComponentBase = function (name,cfg) {
 	 var cfg = cfg || {};
 	 var id = ('h5_c_'+Math.random()).replace('.','_');
-	 var cls = 'h5-comp-'+ cfg.type ;
+	 var cls = 'h5-component-'+ cfg.type ;
 
 
-	 var component = $('<div class="h5-component '+cls+' h5-comp-name-'+name+'" id="'+id+'">');
+	 var component = $('<div class="h5-component '+cls+' h5-component-name-'+name+'" id="'+id+'">');
 
 	 cfg.text && component.text(cfg.text);
 	 cfg.width && component.width(cfg.width/2);
