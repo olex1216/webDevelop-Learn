@@ -9,9 +9,9 @@ var H5 = function ( ) {
     /*新增页面*/
     /**
      * [addPage description]
-     * @param {string} name 图文组件的名称，会加入到ClssName中	
+     * @param {string} name 图文组件的名称，会加入到ClssName中
      * @param {string} text 页面内默认的文本
-     * @return {H5} 链式调用     
+     * @return {H5} 链式调用
      */
 	this.addPage = function (name,text) {
 		var page = $('<div class="h5-page section">');
@@ -34,7 +34,7 @@ var H5 = function ( ) {
 	/*新增组件*/
 	/**
 	 * [addComponent description]
-	 * 
+	 *
 	 */
 	this.addComponent = function (name,cfg) {
 		var cfg = cfg || {};
@@ -44,19 +44,36 @@ var H5 = function ( ) {
 
 		var component;//定义一个变量，存储组件元素
 		var page = this.page.slice(-1)[0];
-		switch (cfg.type) {
-			case 'base':
-				component = new H5ComponentBase(name,cfg);
-				break;
-			case 'point':
-				component = new H5ComponentPoint(name,cfg);
-				break;
-			case 'bar':
-				component = new H5ComponentBar(name,cfg);
-				break;
-			default:
-				// statements_def
-				break;
+		switch( cfg.type ){
+		 case 'base' :
+		     component = new H5ComponentBase(name,cfg);
+		     break;
+		 case 'polyline' :
+		     component = new H5ComponentPolyline(name,cfg);
+		     break;
+		 case 'pie' :
+		     component = new H5ComponentPie(name,cfg);
+		     break;
+		 case 'bar' :
+		     component = new H5ComponentBar(name,cfg);
+		     break;
+		 case 'bar_v' :
+		     component = new H5ComponentBar_v(name,cfg);
+		     break;
+		 case 'radar' :
+		     component = new H5ComponentRadar(name,cfg);
+		     break;
+		 case 'pie' :
+		     component = new H5ComponentPie(name,cfg);
+		     break;
+		 case 'ring' :
+		     component = new H5ComponentRing(name,cfg);
+		     break;
+		case 'point' :
+		     component = new H5ComponentPoint(name,cfg);
+		     break;
+		 default:
+		     break;
 		}
 
 		page.append(component);
@@ -84,5 +101,5 @@ var H5 = function ( ) {
 	};
 
 	return this ;
-};	
+};
 
