@@ -8,7 +8,7 @@
 - jsonp获取数据
 
 Demo
-![readapp](https://raw.githubusercontent.com/olex1216/webDevelop-Learn/master/webpackLearn/src/demo.png)
+![readapp](https://raw.githubusercontent.com/olex1216/webDevelop-Learn/master/readapp/src/demo%201-readapp.png)
 
 Author : Olex
 
