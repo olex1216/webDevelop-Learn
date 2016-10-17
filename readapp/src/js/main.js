@@ -1,4 +1,4 @@
-function main() {
+(function readApp() {
     'use strict';
     //存储事件和数据解密
     var Util = (function() {
@@ -326,4 +326,4 @@ function main() {
 
     main();
 
-}
+})();
