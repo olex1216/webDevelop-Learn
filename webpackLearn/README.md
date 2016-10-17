@@ -7,8 +7,15 @@
 - [webpack学习之路](https://github.com/wangning0/Autumn_Ning_Blog/blob/master/blogs/3-12/webpack.md)
 - [webpack 教程资源收集](https://segmentfault.com/a/1190000005995267)
 
+！[hello](https://raw.githubusercontent.com/olex1216/webDevelop-Learn/master/webpackLearn/src/demo.png)
+
+！[hello](../src/demo.png)
+
 Thanks!
+
+Author : Olex
+
+E-mail:3072549654@qq.com
 
 2016.10.13
 
-email:3072549654@qq.com
