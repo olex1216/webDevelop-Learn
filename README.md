@@ -5,6 +5,4 @@
 
 2.上传项目
 
-Author : Olex
-
-E-mail:3072549654@qq.com
+email:3072549654@qq.com
