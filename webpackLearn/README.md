@@ -9,8 +9,6 @@
 
 ![hello](https://raw.githubusercontent.com/olex1216/webDevelop-Learn/master/webpackLearn/src/demo.png)
 
-![hello](../src/demo.png)
-
 Thanks!
 
 Author : Olex
